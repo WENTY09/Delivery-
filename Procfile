@@ -1,2 +1,2 @@
-web: gunicorn main:app
-worker: python main.py bot
+web: gunicorn -w 4 -b 0.0.0.0:5000
+app:create_app()
