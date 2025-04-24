@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Статистика бота</title>
+</head>
+<body>
+    <h1>Статистика бота</h1>
+    <div id="stats-container"></div>
+    <script>
+        fetch('/api/stats')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('stats-container').innerText = 
+                    `Пользователей: ${data.total_users}, Доставок: ${data.total_deliveries}, Заработано: ${data.total_money} руб.`;
+            });
+    </script>
+</body>
+</html>
